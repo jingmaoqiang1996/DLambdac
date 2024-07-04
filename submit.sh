@@ -17,6 +17,7 @@ usage_0_1() {
     printf "\n\t%-9s  %-40s"  ""          ""
     printf "\n\t%-9s  %-40s"  "0.1.1"     "Force data samples to the disk [do this in JLab server]"
     printf "\n\t%-9s  %-40s"  "0.1.2"     "Split data samples into group of files"
+    printf "\n\t%-9s  %-40s"  "0.1.3"     "Submit jobs for data samples"
     printf "\n\t%-9s  %-40s"  ""          ""
     printf "\n"
 }
@@ -45,6 +46,11 @@ case $option in
     0.1.2) echo "Split data samples into group of files ..."
         cd $WORKDIR/run/DLambdac/gen_scripts/
         ./make_file_list_Data_DLambdac.sh
+    ;;
+
+    0.1.3) echo "Submit jobs for data samples ..."
+        cd $WORKDIR/run/DLambdac/gen_scripts/
+        ./sub_flatten_Data_DLambdac.sh
     ;;
 
 esac

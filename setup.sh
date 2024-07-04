@@ -1,6 +1,8 @@
 export WORKDIR=$PWD
 export PYDIR=$PWD/python
 export ANAROOTDIR=/P/stan/data/maojing/DLambdac/run/DLambdac/anaroot
+export RAWROOTDIR=/P/stan/scratch/maojing/DLambdac/run/DLambdac/rawroot
+export LOGDIR=/P/stan/scratch/maojing/DLambdac/run/DLambdac/log_files
 source /P/stan/data/shared/ROOT/6.30.02/bin/thisroot.sh
 export PATH=/P/stan/data/maojing/software/hd_utilities/FlattenForFSRoot:$PATH
 export FSROOT="/P/stan/data/maojing/software/FSRoot"
