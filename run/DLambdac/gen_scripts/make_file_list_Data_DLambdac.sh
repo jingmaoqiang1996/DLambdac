@@ -1,16 +1,16 @@
 #/bin/bash
 
 RUNS=(
-"RunPeriod-2018-01"
+"RunPeriod-2018-08"
 )
 VERS=(
-"ver13"
+"ver10"
 )
 ANAS=(
-"tree_pippimkpkm__B4"
+"tree_pippimkpkm__T1_S2"
 )
 SOURCES=(
-"/P/stan/scratch/GlueX/RunPeriod-2018-01/analysis/ver13/tree_pippimkpkm__B4/merged/"
+"/P/stan/scratch/GlueX/RunPeriod-2018-08/analysis/ver10/tree_pippimkpkm__T1_S2/merged/"
 )
 
 FILENAME="Gen_FileList_Data_DLambdac"
@@ -19,7 +19,7 @@ echo "cd $WORKDIR" >> $FILENAME
 COUNT=0
 for RUN in ${RUNS[@]}; do
     echo "rm -r $WORKDIR/run/DLambdac/samples/data/$RUN/${VERS[$COUNT]}/${ANAS[$COUNT]}/*txt" >> $FILENAME
-    echo "./python/get_samples.py ${SOURCES[$COUNT]} ./run/DLambdac/samples/data/$RUN/${VERS[$COUNT]}/${ANAS[$COUNT]}/data_${RUN}_${VERS[$COUNT]}_${ANAS[$COUNT]}_DLambdac.txt 100G" >> $FILENAME
+    echo "./python/get_samples.py ${SOURCES[$COUNT]} ./run/DLambdac/samples/data/$RUN/${VERS[$COUNT]}/${ANAS[$COUNT]}/data_${RUN}_${VERS[$COUNT]}_${ANAS[$COUNT]}_DLambdac.txt 3G" >> $FILENAME
     COUNT=$((${COUNT} + 1))
 done
 

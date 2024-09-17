@@ -45,7 +45,7 @@ def main():
     sample_type = args[4]
     file_idx    = args[5]
 
-    output_dir  = '$RAWROOTDIR/' + sample_type + '/DLambdac'
+    output_dir  = '$RAWROOTDIR/' + sample_type + '/DLambdac/' + analysis
     cmd         = 'mkdir -p ' + output_dir
     result = subprocess.run(cmd, shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
     check_result(result)
@@ -55,7 +55,7 @@ def main():
         for idx, line in enumerate(lines):
             line = line.strip('\n')
             cmd = 'flatten -in ' + line + ' -out ' + output_dir + '/' + sample_type + '_' + run_period + '_' + version + '_' + analysis + '_' + file_idx + '_' + str(idx) + '.root '
-            cmd += '-chi2 15 -massWindows 0.3 -numNeutralHypos 2 -numUnusedTracks 0 -usePolarization 0'
+            cmd += '-chi2 200 -massWindows 0.5 -numNeutralHypos 2 -numUnusedTracks 0 -usePolarization 1'
             result = subprocess.run(cmd, shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
             check_result(result)
 
